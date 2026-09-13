@@ -1,0 +1,29 @@
+# 비밀값 — 절대 올리지 않는다. .env.example만 올린다
+.env
+.env.*
+!.env.example
+
+# 파이썬
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# 테스트 / 도구 캐시
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 업로드된 파일 (Week 5)
+uploads/
+
+# 로컬 도구 설정
+.claude/settings.local.json
+
+# OS / 에디터
+.DS_Store
+.idea/
+*.swp
+
+/docs

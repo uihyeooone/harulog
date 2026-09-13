@@ -1,0 +1,36 @@
+[project]
+name = "harulog"
+version = "0.1.0"
+description = "하루 기록 앱 - 백엔드 학습용 사이드 프로젝트"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "alembic>=1.20.0",
+    "asyncpg>=0.31.0",
+    "fastapi>=0.141.1",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy[asyncio]>=2.0.52",
+    "uvicorn[standard]>=0.52.4",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.16.7",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/F: 기본 오류, I: import 정렬, UP: 옛 문법 현대화, B: 흔한 버그 패턴
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# async def 테스트에 매번 데코레이터를 안 붙여도 되게
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
